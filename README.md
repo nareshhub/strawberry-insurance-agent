@@ -2,6 +2,28 @@
 
 A premium, secure agentic service built with the **Google Agent Development Kit (ADK) 2.0** and FastAPI, featuring multi-agent orchestration, Human-in-the-Loop (HIL) safety gates, sentiment-based churn risk assessment, Model Context Protocol (MCP) tool integrations, and robust security pre-screening.
 
+<div align="center">
+  <img src="strawberry-agent/specs/logo.svg" alt="Strawberry Insurance logo" width="120"/>
+
+  # Strawberry Insurance
+
+  ### Agent Gateway · Scaling AI Safely with Human Governance
+
+  A premium, secure agentic service built with **Google Agent Development Kit (ADK) 2.0** and FastAPI. Multi-agent orchestration, Human-in-the-Loop safety gates, sentiment-based churn assessment, Model Context Protocol tool integrations, and robust security pre-screening.
+
+  <br>
+
+  ![ADK](https://img.shields.io/badge/Google_ADK-2.0-FF4D6D?style=flat-square)
+  ![MCP](https://img.shields.io/badge/MCP-stdio-3ECF8E?style=flat-square)
+  ![Python](https://img.shields.io/badge/Python-3.11+-F5F5F7?style=flat-square)
+  ![FastAPI](https://img.shields.io/badge/FastAPI-latest-9A9AA8?style=flat-square)
+  ![Score](https://img.shields.io/badge/Eval_Score-5.0/5.0-3ECF8E?style=flat-square)
+
+  <br>
+
+  ![Strawberry Insurance cover](docs/hero.png)
+
+</div>
 ---
 
 ## 📖 The Problem
@@ -21,6 +43,13 @@ Our solution is a secure, multi-agent gateway built using **ADK**. It implements
 ---
 
 ## 📐 Architecture
+
+Messages do not go straight to the model. They flow through a graph workflow with three deterministic stages: **Pre-Screen → Orchestrator → Specialist + Gate**.
+
+![Architecture](strawberry-agent/specs/architecture.png)
+
+**The critical design choice** is `rerun_on_resume=True` on the gate nodes. This flag is what lets pauses survive across separate HTTP requests. ADK 2.0 checkpoints state to durable storage and lets the process die between the pause and the resume, which is what makes stateless Cloud Run deployment realistic. A conversation paused at 4pm can be resumed at 4:20pm even if the container recycled.
+
 Below is the visual workflow map demonstrating the security screen, routing orchestrator, sub-agents, and HIL boundaries:
 
 ```mermaid
