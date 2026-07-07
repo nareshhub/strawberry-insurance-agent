@@ -21,10 +21,10 @@ A premium, secure agentic service built with the **Google Agent Development Kit 
 
   <br>
 
-  ![Strawberry Insurance cover](docs/hero.png)
+  ![Strawberry Insurance cover](strawberry-agent/specs/score_card.png)
 
 </div>
----
+
 
 ## 📖 The Problem
 In digital insurance, customers expect rapid responses to quote comparisons and claim status updates. However, automating these processes exposes the business to two critical risks:
