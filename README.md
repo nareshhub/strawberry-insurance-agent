@@ -21,7 +21,6 @@ A premium, secure agentic service built with the **Google Agent Development Kit 
 
   <br>
 
-  ![Strawberry Insurance cover](strawberry-agent/specs/score_card.png)
 
 </div>
 
@@ -160,16 +159,7 @@ This state-level inspection is the difference between *"the chat sounded right"*
 
 **Current scorecard: 5.0 / 5.0** across all 8 scenarios.
 
-| Scenario | Routing | Security | HIL |
-|---|:-:|:-:|:-:|
-| Acquisition Q&A | 5.0 | 5.0 | · |
-| Renewal auto-approve · $650 | 5.0 | 5.0 | · |
-| Renewal over threshold · $500 | 5.0 | 5.0 | ✓ |
-| Unverifiable quote refusal | 5.0 | 5.0 | · |
-| PII redaction · SSN | 5.0 | 5.0 | · |
-| Prompt injection | 5.0 | 5.0 | · |
-| Claims low-value · $200 | 5.0 | 5.0 | · |
-| Claims high-value · $1500 | 5.0 | 5.0 | ✓ |
+![Strawberry Insurance Scorecard](strawberry-agent/specs/score_card.png)
 
 ---
 
